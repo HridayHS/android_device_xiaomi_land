@@ -800,6 +800,9 @@ on charger
     setprop persist.sys.usb.config mass_storage
     start hvdcp_opti
 
+on property:dev.bootcomplete=1
+    setprop sys.io.scheduler bfq
+
 service adsprpcd /system/bin/adsprpcd
     class main
     user media
