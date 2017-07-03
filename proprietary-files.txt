@@ -28,9 +28,8 @@ vendor/lib/rfsa/adsp/libscveTextReco_skel.so
 # Audio
 etc/aanc_tuning_mixer.txt
 etc/audio_platform_info.xml
-etc/adsp.cfg
-etc/appops_policy.xml
-etc/audio_pcm.cfg
+etc/adsp.cfg|958ac2f06668384a2d9d481664c94927c0ebbe6c
+etc/audio_pcm.cfg|ce0d740c68d08868fc73459d3a56ee08825997a9
 etc/audio_platform_info_extcodec.xml
 etc/audio_policy.conf
 etc/drc/drc_cfg_5.1.txt
@@ -1096,7 +1095,7 @@ bin/qseecomd
 vendor/bin/mdtpd
 vendor/bin/qseeproxydaemon
 vendor/lib/libcppf.so
-vendor/lib/liboemcrypto.so
+vendor/lib/liboemcrypto.so|95f5ead8c12ca55fd5af080de4ba70129a548620
 vendor/lib/libQSEEComAPI.so
 vendor/lib64/lib-sec-disp.so
 vendor/lib64/libGPreqcancel.so
@@ -1134,7 +1133,8 @@ lib64/libfp_client.so
 lib64/libfpnav.so
 lib64/libfpservice.so
 
-
+# FM
+bin/fm_qsoc_patches
 
 # Gatekeeper
 vendor/lib/hw/gatekeeper.msm8937.so
@@ -1198,7 +1198,7 @@ vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
 vendor/lib64/liblowi_wifihal_nl.so
-+vendor/lib64/libslimclient.so
+vendor/lib64/libslimclient.so
 vendor/lib64/libsubsystem_control.so
 vendor/lib64/libulp2.so
 vendor/lib64/libxt_native.so
@@ -1369,7 +1369,6 @@ vendor/media/PFFprec_600.emd
 
 # MMI
 vendor/lib64/libmmi.so
-vendor/lib64/libmmi_audio.so
 vendor/lib64/libmmiipstreammmihttp.so
 vendor/lib64/libmmipstreamaal.so
 vendor/lib64/libmmipstreamnetwork.so
@@ -1382,21 +1381,17 @@ vendor/lib64/mmi_fingerprint.so
 vendor/lib64/mmi_flashlight.so
 vendor/lib64/mmi_fm.so
 vendor/lib64/mmi_gps.so
-vendor/lib64/mmi_hall.so
 vendor/lib64/mmi_headset.so
 vendor/lib64/mmi_key.so
 vendor/lib64/mmi_lcd.so
 vendor/lib64/mmi_light.so
 vendor/lib64/mmi_memory.so
 vendor/lib64/mmi_nfc.so
-vendor/lib64/mmi_otg.so
 vendor/lib64/mmi_sensor.so
 vendor/lib64/mmi_sim.so
 vendor/lib64/mmi_storage.so
 vendor/lib64/mmi_sysinfo.so
 vendor/lib64/mmi_touch.so
-vendor/lib64/mmi_tpupgrade.so
-vendor/lib64/mmi_usb.so
 vendor/lib64/mmi_vibrator.so
 vendor/lib64/mmi_wifi.so
 vendor/lib/libmmi.so
@@ -1413,21 +1408,17 @@ vendor/lib/mmi_fingerprint.so
 vendor/lib/mmi_flashlight.so
 vendor/lib/mmi_fm.so
 vendor/lib/mmi_gps.so
-vendor/lib/mmi_hall.so
 vendor/lib/mmi_headset.so
 vendor/lib/mmi_key.so
 vendor/lib/mmi_lcd.so
 vendor/lib/mmi_light.so
 vendor/lib/mmi_memory.so
 vendor/lib/mmi_nfc.so
-vendor/lib/mmi_otg.so
 vendor/lib/mmi_sensor.so
 vendor/lib/mmi_sim.so
 vendor/lib/mmi_storage.so
 vendor/lib/mmi_sysinfo.so
 vendor/lib/mmi_touch.so
-vendor/lib/mmi_tpupgrade.so
-vendor/lib/mmi_usb.so
 vendor/lib/mmi_vibrator.so
 vendor/lib/mmi_wifi.so
 
@@ -1690,7 +1681,7 @@ vendor/lib/libwfduibcsrcinterface.so
 
 # Widevine
 vendor/lib64/mediadrm/libdrmclearkeyplugin.so
-vendor/lib/drm/libomadrmengine.so
+vendor/lib/drm/libomadrmengine.so|a2683e1407453313e1c23c036dc2a46c16d8d63a
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/qcdrm/playready/lib/drm/libdrmprplugin_customer.so
@@ -1700,7 +1691,7 @@ vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmdecrypt_customer.so
 vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmplugin_customer.so
 
 # Wi-Fi
-+bin/fstman
+bin/fstman
 bin/cnss-daemon
 bin/cnss_diag
 bin/wcnss_service
