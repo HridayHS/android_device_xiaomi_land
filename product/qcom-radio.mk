@@ -26,7 +26,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     ril.ecclist=000,08,100,101,102,110,112,118,119,120,122,911,999 \
     ril.ecclist1=000,08,100,101,102,110,112,118,119,120,122,911,999 \
-    ro.ril.disable.power.collapse=0 \
     ro.ct.device.model=XMP-2016030 \
     ro.telephony.call_ring.multiple=false \
     ro.telephony.default_network=20 \
