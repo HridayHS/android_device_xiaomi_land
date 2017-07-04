@@ -124,6 +124,7 @@ etc/acdbdata/QRD/QRD_Speaker_cal.acdb
 bin/btnvtool
 bin/hci_qcomm_init
 etc/permissions/btmultisim.xml
+framework/btmultisimlibrary.jar
 vendor/lib/libbtnv.so
 vendor/lib64/libbtnv.so
 vendor/lib64/libbt-vendor.so
