@@ -1,6 +1,6 @@
 # Consumerir
-PRODUCT_PACKAGES += \
-    consumerir.msm8937
+#PRODUCT_PACKAGES += \
+#    consumerir.msm8937
 
 # Permissions
 PRODUCT_COPY_FILES += \
