@@ -1307,8 +1307,6 @@ vendor/lib/libsmwrapper.so
 
 # Media
 etc/firmware/DE.o.msm8937
-etc/media_codecs_performance.xml
-etc/media_profiles.xml
 lib/libOmxSwVdec.so
 lib/libOmxSwVencMpeg4.so
 lib/libOmxVpp.so
