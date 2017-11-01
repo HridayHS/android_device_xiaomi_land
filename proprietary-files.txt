@@ -117,7 +117,7 @@ vendor/lib64/libbt-vendor.so
 -framework/cneapiclient.jar|3cb56a579341acfb16d2be2e41bac2c7b6ac34b4
 -framework/com.quicinc.cne.jar|773982968679874bc77847b641ef894e7ee09957
 -framework/ConnectivityExt.jar|67025d09bbc7bb87bca1d15ab9c133eeb1ef2b9d
--priv-app/CNEService/CNEService.apk|b4e476057c5060245bc3c8ce593130bc75bd675d
+-priv-app/CNEService/CNEService.apk|d420a96da3e3859207815bf0353844eb0cf159dc
 bin/cnd|ce4d3e707a963d9dafd06849f5beae0c3d23c5a1
 etc/cne/andsfCne.xml|f81a69eac5dd16bbb195a0fcf1211a51cc014553
 etc/cne/SwimConfig.xml|68dedcca1c2ac18cf81fdee1854de16a3a60dd02
@@ -1075,7 +1075,7 @@ lib64/hw/consumerir.default.so
 -framework/com.qti.dpmframework.jar|7d855e9cf5d10cd88cdcd9c9bd16120afcaa7e72
 -framework/dpmapi.jar|0015235ff71d52d1b340b10ce4fa737fa26975ef
 -framework/tcmclient.jar|e7149c664f4b1841139ab816c0d4e0942df0583c
--priv-app/dpmserviceapp/dpmserviceapp.apk|67b96b77207598d80179c717341079090e4ceb3c
+-priv-app/dpmserviceapp/dpmserviceapp.apk|e89f660cd1ab087d5b380afcf3468e3228a8eeaf
 bin/dpmd|e54c1714a9742104b26270bb2e8c68b13e31e6db
 etc/dpm/dpm.conf|4044e359cfde5a4e8c1ef31a684b3009bca31058
 etc/dpm/nsrm/NsrmConfiguration.xml|c406e5aaaa4ab278a7f7b62405ad5d91c8084835
@@ -1137,12 +1137,12 @@ vendor/lib/hw/gatekeeper.msm8937.so
 vendor/lib64/hw/gatekeeper.msm8937.so
 
 # GPS - from garlic (Yu Yureka Black)
--framework/com.qti.location.sdk.jar|d3e2fe0bbdf040c183ae0e4a5b7d99c0d96295f7
--framework/com.qualcomm.location.vzw_library.jar|20c7b4e9a1388f17660e164eed328a4315ca0e44
+-framework/com.qti.location.sdk.jar|872f07ae08a0812aedbd65932f6df1488bb4a5e2
+-framework/com.qualcomm.location.vzw_library.jar|6f5d30511192534aee08d3b779a77bc3470aef4f
 -framework/izat.xt.srv.jar|da31c6183f8d29251ce5656ddab6d4b386934382
 -lib64/libloc_api_v02.so|8c5844a3a307eb30640ecf24739599e7c2f6d211
 -lib64/libloc_ds_api.so|65751de3f84e1177f4e90001cee727d84f895206
--priv-app/com.qualcomm.location/com.qualcomm.location.apk|8df3c1a6a83e6fd45ff10d8437d41a488a61d9f7
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk|a2f52a001d9ec1d4c0a27c6bf6b109400a07e294
 bin/loc_launcher|4ef706d7f21a9518b9824461b439c3a8d5c54a54
 bin/lowi-server|ba05c97b23a9616c3e48f3dedd5fef4b7b4f163d
 bin/xtwifi-client|70fcc2d65689ed20b4e99e0bb23bbeb9a3f550de
@@ -1186,19 +1186,19 @@ vendor/lib64/libxtadapter.so|f4d3c16117adc5a77d9ead2d058682af10f77856
 vendor/lib64/libxtwifi_ulp_adaptor.so|1164ac63ea0e202931122500f5ed58e48874f813
 
 # Graphics - from garlic (Yu Yureka Black)
-vendor/lib/hw/vulkan.msm8937.so|411f5ecdeb34bd8a991685eee509a80f83172a6d
+vendor/lib/hw/vulkan.msm8937.so|5d49967d928859048eadb19abfb6476ca3d7697a
 vendor/lib/egl/eglsubAndroid.so|84541806f8db4cd13396ad7f6813312da66930c8
-vendor/lib/egl/eglSubDriverAndroid.so|a63af6bdc902cd7561464fc9414d169556e59335
+vendor/lib/egl/eglSubDriverAndroid.so|5fd9068ce6fea86120eb0f9c1d72d7f86b308031
 vendor/lib/egl/libEGL_adreno.so|cfd56d8550fa5558ab8e44a54537c940345580c3
 vendor/lib/egl/libESXEGL_adreno.so|472190f4a7219245f75b644be004f57089ebce8a
 vendor/lib/egl/libESXGLESv1_CM_adreno.so|110d1a34cd4a285bc46c2ad59617c6a68129d643
-vendor/lib/egl/libESXGLESv2_adreno.so|d796163f00d2269999d6fe2cf67ac739e363ce31
+vendor/lib/egl/libESXGLESv2_adreno.so|6158413a2f4a8c960c63eef305c40e508d4f404f
 vendor/lib/egl/libGLESv1_CM_adreno.so|c3ee8a4861ac907eb892aba54c6672eb05500ed5
 vendor/lib/egl/libGLESv2_adreno.so|7cd477d4722920e2b4848aa4d5c54e0ad9ecc65a
 vendor/lib/egl/libQTapGLES.so|dc58c77132d635e6c8f95a6ea9ac1f3a4ce2da0b
-vendor/lib/egl/libRBEGL_adreno.so|5333ed6c018813fcbce450aaac8701aea845f411  
+vendor/lib/egl/libRBEGL_adreno.so|3ccf3256314a302a5e0cbfdb6e92e336efe5d0b8  
 vendor/lib/egl/libRBGLESv1_CM_adreno.so|55586e4619b5c5d9cc7c40ddbab043a8ee76ef03
-vendor/lib/egl/libRBGLESv2_adreno.so|d144cf87250e1c0a1cd1ae964fcc8504d754bce9
+vendor/lib/egl/libRBGLESv2_adreno.so|86d51c62000307d89e4e7de8ea9d922656b58819
 vendor/lib/egl/libq3dtools_adreno.so|0ae269296586f4dfc4f5ac0c8a6bb106664bdfa7
 vendor/lib/egl/libq3dtools_esx.so|fd1948494bbc2b7c63e1d4776ee4394641f52128
 vendor/lib/libadreno_utils.so|5e08564566cc29f6730a0ca3ecc950a4417d26f1
@@ -1208,11 +1208,11 @@ vendor/lib/libc2d30-a3xx.so|371d6688b6140a2974da005a8f149a964884d0e3
 vendor/lib/libc2d30-a4xx.so|89a913924c5bdffea666a97fc9e867a48a92520a
 vendor/lib/libc2d30-a5xx.so|c190120a6ae39a1bbb9f41417d9b1dd1f6b5d307
 vendor/lib/libc2d30_bltlib.so|ad5f0dfd3a5fbb7f22618fbc2d8283a42ed8d1b7
-vendor/lib/libCB.so|6552947143ceeb218fc24593581afd138c148243
-vendor/lib/libgsl.so|994d455ef51709d53a4e47eb71abd6cbb4aeba46
-vendor/lib/libllvm-glnext.so|2620411b5f8ce368fea8cd1165be56d262f0d5a9
-vendor/lib/libllvm-qcom.so|0294f8f900c1157e8e28c6acb2dbea846b76895d
-vendor/lib/libllvm-qgl.so|0845d8c2c069d1b060bdcc15412ee2d3810906f7
+vendor/lib/libCB.so|b49b5089e0f779251a5f7b3bf0b0d0bf6fe30576
+vendor/lib/libgsl.so|cbed4ac7a4ac75c79526a2599ec795c10d2fa546
+vendor/lib/libllvm-glnext.so|417aa8c4f41815489dcdead3afdc4e8aac1036c5
+vendor/lib/libllvm-qcom.so|076ec83a9f1ad3a5698ec8b47a2f2d56d06cc458
+vendor/lib/libllvm-qgl.so|df2f6123a98e81431303d10e817aa79dec0a69d0
 vendor/lib/libmm-color-convertor.so|1bc9d00c211d44f98541f98dd84776a83da7ac2c
 vendor/lib/libmm-disp-apis.so|da03d552681e3f2179fe8c67e83e37663624ef15
 vendor/lib/libmm-hdcpmgr.so|c7ec56a2ec729885034594e5f25e80211fa96d04
@@ -1220,32 +1220,32 @@ vendor/lib/libmm-qdcm.so|c89cbef8e8ced4386c58152b377b6c4be8c00cce
 vendor/lib/libmmQSM.so|3dc219d481787eb83eb466bed2eec4c3c5d93eda
 vendor/lib/libOpenCL.so|e1f8c3fdb58fa9fbb1465d909e9ab7ba31176bd6
 vendor/lib/librs_adreno.so|d943d919b21c91f8cd80542f6a497e37c4e8635c
-vendor/lib/librs_adreno_sha1.so|ae5674e00da9c5699d4bbc149c4ead736e868735
+vendor/lib/librs_adreno_sha1.so|8b10343c699ac1e370c49a88a0f4cb53b58dac22
 vendor/lib/libRSDriver_adreno.so|b5b8b24482caf93f6c626e8f111b5439e784314b
 vendor/lib/libsc-a2xx.so|870dbba41c95cf953b4a595e8ddab4f4d601b1e8
-vendor/lib/libsc-a3xx.so|704ec642053a2a80392ae186512b13959e55537c
+vendor/lib/libsc-a3xx.so|fa5c08102b8992a9e0b8b3dbf297abcde14815b4
 vendor/lib/libscalar.so|f6ee7fa6e9ea230e960406369c76fd6c998db9df
 vendor/lib/libscale.so|332ecf4be8a221e8640177efbbc04cd1d3289a36
 vendor/lib/libsd_sdk_display.so|23b1ef85654178da98e4f950d26736759cf069c1
 vendor/lib/libsdm-color.so|fa907f8d480261fdb3b78057c7352bc1e3899a92
 vendor/lib/libsdm-diag.so|dd41080c743f31cf716c32d75e111e7efbd783be
 vendor/lib/libsdm-disp-apis.so|72f6db2b249a47a6ac83d4dfc7d2e9f76b349920
-vendor/lib/libsdmextension.so|9ec76e4e0269297cf4445262c0a9a5fd4f38436a
-vendor/lib64/hw/vulkan.msm8937.so|7689a5f48716a871c0e42337f38e80bafbe04633
+vendor/lib/libsdmextension.so|36985274b59ab79c610d26d2d4ea99374beb4089
+vendor/lib64/hw/vulkan.msm8937.so|0dc663dc47b95d71e67c2b39ff5cf89a51dc5cd7
 vendor/lib64/egl/eglsubAndroid.so|099594f5fb7f5a3b9b149a63052bfd5c13007416
-vendor/lib64/egl/eglSubDriverAndroid.so|0a5d69223c7076e35a17f0548086ad49527360ac
+vendor/lib64/egl/eglSubDriverAndroid.so|70dc2172e3f050724684966cc1931486b530a96f
 vendor/lib64/egl/libEGL_adreno.so|67a62533466424908fa5dccc3ed949f0bc8c7876
 vendor/lib64/egl/libESXEGL_adreno.so|ae324ea1f3c4895c9739ba4b12f6f8741ab84049
 vendor/lib64/egl/libESXGLESv1_CM_adreno.so|954cc59b4b7e673c562dc65e664e060c24cd90b9
-vendor/lib64/egl/libESXGLESv2_adreno.so|b5d3006ca72f08d5220b4434bea7dce40a1f76b4
+vendor/lib64/egl/libESXGLESv2_adreno.so|dd88c753cfb156de911c31471e67975b1f1ef0a6
 vendor/lib64/egl/libGLESv1_CM_adreno.so|a512d9397be60e3e51b5aac39961fa9ce927fe4b
 vendor/lib64/egl/libGLESv2_adreno.so|c57003aeea296311621ad81f6413e57a5c02e861
 vendor/lib64/egl/libq3dtools_adreno.so|783fff6e1b5b35dff56600ad578433d05a248bca
 vendor/lib64/egl/libq3dtools_esx.so|99b75f9d84f8dfd3dabb33947f196583f0965f66
 vendor/lib64/egl/libQTapGLES.so|a17cd83aca8ad0d2dbc65e5e6e83af10e9251264
-vendor/lib64/egl/libRBEGL_adreno.so|5c4014dcf0826451f5863b7520b7524fea0643d3
+vendor/lib64/egl/libRBEGL_adreno.so|e57c68c666a36d7323e38f26d73e8f45f5cc8556
 vendor/lib64/egl/libRBGLESv1_CM_adreno.so|faee25592cafef83b04f0993f888c5a09cfdd67e
-vendor/lib64/egl/libRBGLESv2_adreno.so|ab6df3f7a06e2a1054af403e627ea602975abc2e
+vendor/lib64/egl/libRBGLESv2_adreno.so|25574adc4b8f84295683e8f8d919134da02d7a49
 vendor/lib64/libadreno_utils.so|6ce127cde7a189df7fd58634d20df42d342af757
 vendor/lib64/libbccQTI.so|6b3ce6d982fa9b3e70bffd0f388ec4cc797c8275
 vendor/lib64/libC2D2.so|169530447305baf99d1e031544ee020b218cbcaa
@@ -1253,34 +1253,34 @@ vendor/lib64/libc2d30-a3xx.so|68e42e156c37d5e510cb1f731585f3b3d1ef77a0
 vendor/lib64/libc2d30-a4xx.so|c576fb9878f53aeddeb5281983dfc6874e15afd2
 vendor/lib64/libc2d30-a5xx.so|8f33dfdec3836881c190188e60d2030121840bb3
 vendor/lib64/libc2d30_bltlib.so|278ac5563c15de0cbe58c6726e5283286802cfa6
-vendor/lib64/libCB.so|a2826f0b5cae348bebf6a644e6f9b9b438325aa6
-vendor/lib64/libgsl.so|60e14889eee810a9c158f39aaedd3cf8456e4761
-vendor/lib64/libllvm-glnext.so|b69614fdc8e63fec125d85f75fe9693446d2b2d7
-vendor/lib64/libllvm-qcom.so|f8a8045f71c3a885b93a5c8ce772a2c19468ffc9
-vendor/lib64/libllvm-qgl.so|6586cc2b0f4e35fbaf3fdad6de1cd8bbb805c244
+vendor/lib64/libCB.so|ac6ec555d97cdb1e28106f5df6c67ad2954ef016
+vendor/lib64/libgsl.so|a3beaa14f3038c003de1b3f05f5d567e8336dff1
+vendor/lib64/libllvm-glnext.so|014d7365c8e6f5fef340e34338c70916e9d47a72
+vendor/lib64/libllvm-qcom.so|2cbb7e745fed3a46525191915c911cf43f6fc5b5
+vendor/lib64/libllvm-qgl.so|98be372d4d365822bc352a3e8f8795b1086cf0be
 vendor/lib64/libmm-disp-apis.so|31ba0487774a8052c482f0efcbcab73afc14d39e
 vendor/lib64/libmm-hdcpmgr.so|4720542bc83883b643607f95b0c043e18c6d75ca
 vendor/lib64/libmm-qdcm.so|3be5e9a76351e11d337401b6b8610736f8da9974
 vendor/lib64/libmmQSM.so|4322558d2894869a73a616e472c27f4fc310b95f
 vendor/lib64/libOpenCL.so|f595e2008b586c4f0cd12d623b7d2b5411bef4a6
 vendor/lib64/librs_adreno.so|d07397e5471622152c808fa4229e619aefe2f58c
-vendor/lib64/librs_adreno_sha1.so|87bc80d22dec56d89b6554644c74a26e0a2ee13c
+vendor/lib64/librs_adreno_sha1.so|d39ee63e99c3766a2212c48332efc19895e7f350
 vendor/lib64/libRSDriver_adreno.so|81bd60d4efc3da887037ed3b0b957db637506a8a
 vendor/lib64/libsc-a2xx.so|121ac089cd7765e8a47cbb62f1a3c48b6e8c6a9d
-vendor/lib64/libsc-a3xx.so|886d962298a7929d150e8145ec085ddb3ece030f
+vendor/lib64/libsc-a3xx.so|a19f5458656c9ba1d8c461ed492b8d13627ae7f7
 vendor/lib64/libscalar.so|904dad34aa8b6d3276cb0dd54d7b3df96d578eef
 vendor/lib64/libscale.so|f4ac0c0cdefa29e938f450c00cde02877c7f33cf
 vendor/lib64/libsd_sdk_display.so|584beb42052eb6f7990f61731ff325e6a56b09d7
 vendor/lib64/libsdm-color.so|daa84d2435afe1159b479548ca89add2c6e188eb
 vendor/lib64/libsdm-diag.so|2cb958c6bde9e8e6e8b085b781bc9b3927fbb929
 vendor/lib64/libsdm-disp-apis.so|10eb679e9c91a0c9dbd5a993eaf154212986e7f0
-vendor/lib64/libsdmextension.so|621a57559b40d459c4da42c149599082a5f94942
+vendor/lib64/libsdmextension.so|9ee3cb62904546257a2a43c6189abfbbc8916045
 vendor/lib64/libuiblur.so|4b3fabf5ded7c4af531abde681676fc5e9248494
 
-# Graphics firmware - from santoni (Redmi 4)
-etc/firmware/a225p5_pm4.fw|02e5fb26c121d388104bc6a0f31811dfa91f1828
+# Graphics firmware - from garlic (Yu Yureka Black)
 etc/firmware/a225_pfp.fw|7ba4003796285d36c125fabe453b45d5e21850cc
 etc/firmware/a225_pm4.fw|87d6f27ca08b521cc3361f63f0631a1fef2403ac
+etc/firmware/a225p5_pm4.fw|02e5fb26c121d388104bc6a0f31811dfa91f1828
 etc/firmware/a300_pfp.fw|899dbfad4812084971cfc1ff30f06a4b45c2d34c
 etc/firmware/a300_pm4.fw|94529206b45b6e9f6ed30dadabe4244a88a60975
 etc/firmware/a330_pfp.fw|3e2fcee7276ded819cf2d95864fdd6788a484ee1
@@ -1361,7 +1361,7 @@ vendor/lib/libwms.so
 vendor/lib64/libwms.so
 
 # Network - from garlic (Yu Yureka Black)
--priv-app/QtiTetherService/QtiTetherService.apk|4b8cbc35e638fada9bc8f7708d64fd5c84dba707
+-priv-app/QtiTetherService/QtiTetherService.apk|50f341977841925685837ab1460a12b7201c1466
 vendor/lib/libconnctrl.so|0cc2b980b5b8a852b9c6e041ca50ca2d65b800db
 vendor/lib/libQtiTether.so|fd264dfd66adcd2e9cd3cfede778f1387bdc6423
 vendor/lib64/libconnctrl.so|928acb9878e865493a37ad4a94ce29e95c616745
@@ -1441,15 +1441,17 @@ vendor/lib64/libquipc_os_api.so|dc85ee4e026b852ddaca580aaf2596e4ee44a520
 vendor/lib64/libsmemlog.so|90ad8be70df01cc84e42b8ffe8c5558cd4c59b7f
 
 # Radio - from garlic (Yu Yureka Black)
--app/datastatusnotification/datastatusnotification.apk|7a570b2db2d8c2927aa69ccfdfc7c0dd4abdddb1
--app/fastdormancy/fastdormancy.apk|ac97539980eee397baaaff0e5f381bf53650e81d
--app/QtiTelephonyService/QtiTelephonyService.apk|5624e9c5d28dd5aeac2c64e732b2b45634113bd8
--app/shutdownlistener/shutdownlistener.apk|299d7371cf3bd1d0ae2e2b75d7c2db32b078ff1f
+-app/datastatusnotification/datastatusnotification.apk|da99acbdfa8a04e88e98e14c35e84a15d9384df6
+-app/embms/embms.apk|3c9747a37fae33ea8e95f743a11faf2f9a4972f2
+-app/fastdormancy/fastdormancy.apk|5d1d27540a5f837afafc3aca943fa35566536075
+-app/QtiTelephonyService/QtiTelephonyService.apk|2a83714f84b16881edf2bf087c86046ed1909304
+-app/shutdownlistener/shutdownlistener.apk|26e18f5dddbb34b4f69fc75025016ec2d4f90d17
 -framework/embmslibrary.jar|a06799495515305de3e5d432ec62a1f692200c99
--framework/qcrilhook.jar|09181bf6dda6f1540913c235bb237ad78c4e2143
--framework/qti-telephony-common.jar|8ac5637ca189f2a8951662bfba38185774f3dc95
--framework/QtiTelephonyServicelibrary.jar|fb033d18d752a4cc38ec6063f09733f865cf800c
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|149c7331bfa64a270cb9ecf5f68adfdc46f4cebf
+-framework/qcrilhook.jar|d69dbd782c914e618da0b5bb452c2d6013960de5
+-framework/qcnvitems.jar|fc15b9e310b2e1068eea112e0ee789409c9bb6a4
+-framework/qti-telephony-common.jar|5acc2a0d1062ff3014bfebd0718c77536542eb08
+-framework/QtiTelephonyServicelibrary.jar|59b19a7c70761a8107f71c5571cb822ad6183be7
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|7f27d66dc09955268045630c0e0c31bffb305f15
 bin/netmgrd|796db39f717421846f258809c06b732632d63a58
 bin/radish|8be9231db031e22e91538be2dcf702e0bd359d40
 bin/rmt_storage|14b0c11d3d85dd22eadd6d09a9e4d419cdfaa0ad
@@ -1458,6 +1460,7 @@ etc/data/dsi_config.xml|c4f6518596a519e9838159b1eaa99fa2ad86e24d
 etc/data/netmgr_config.xml|824c5c864d1639215d7f325f4577493f769a27f6
 etc/permissions/embms.xml|5e1b492874c221a7e1188fc3a5369d32b3e67969
 etc/permissions/qcrilhook.xml|9fc58a3d54d20ac1d53bab14608815121aefbce5
+etc/permissions/qcnvitems.xml|dc0e70cace2317b5169a454cbc2bbf8887c18d55
 etc/permissions/telephonyservice.xml|b297c8a27443570377d78586b00198839ce326bb
 vendor/bin/qti|9bbdb2dd3934625c6e1c74ea7c3198fe99ffdc46
 vendor/lib64/libconfigdb.so|a5ba5840b3eae987c98d8b80453a5a94cd8d35ec
@@ -1477,9 +1480,10 @@ vendor/qcril.db|7519ccf9924a5e054d7ad18a9747f6a31e797ff8
 
 # Radio - IMS - from garlic (Yu Yureka Black)
 -framework/imscmlibrary.jar|0c24d6540c06efede52169c1445272f43748180f
--vendor/app/ims/ims.apk|18a4a1f9a756ebac6801f2767789d73c48e1d502
--vendor/app/imssettings/imssettings.apk|60f016a21af42f4f03a6d8cdfb9fd29027a7cb35
--vendor/framework/qti-vzw-ims-internal.jar|2fcba9745af684e1fbfda5e0d6ebc7563f1cf98b
+-framework/rcsimssettings.jar|566a0f637344ca3182aca33753e404977fc77ecc
+-vendor/app/ims/ims.apk|b93fe1eb95be3f3bad95703e58e5a04bd00571d2
+-vendor/app/imssettings/imssettings.apk|27a7a76e07b67c0ae8502e18833a82709a46b853
+-vendor/framework/qti-vzw-ims-internal.jar|71ceb3b5a6114c94a0dcacc21bd6dd922f387c5e
 bin/ims_rtp_daemon|1a3dc8ba908e614ca8d8dcd691c1f6288bc481e7
 bin/imscmservice|8c1340911fbaf588656ddcd714090eb02d4bd2a2
 bin/imsdatadaemon|98bb3110589b717b5f92b619a7dcd6b0b6ea3f4d
