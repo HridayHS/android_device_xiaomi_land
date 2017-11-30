@@ -6333,6 +6333,7 @@ int32_t QCamera2HardwareInterface::processPrepSnapshotDoneEvent(
  *==========================================================================*/
 int32_t QCamera2HardwareInterface::processASDUpdate(cam_auto_scene_t scene)
 {
+    
     size_t data_len = sizeof(cam_auto_scene_t);
     size_t buffer_len = 1 *sizeof(int)       //meta type
                       + 1 *sizeof(int)       //data len
@@ -6341,6 +6342,8 @@ int32_t QCamera2HardwareInterface::processASDUpdate(cam_auto_scene_t scene)
                                              buffer_len,
                                              1,
                                              mCallbackCookie);
+
+#ifndef VANILLA_HAL
     if ( NULL == asdBuffer ) {
         LOGE("Not enough memory for histogram data");
         return NO_MEMORY;
@@ -6352,7 +6355,7 @@ int32_t QCamera2HardwareInterface::processASDUpdate(cam_auto_scene_t scene)
         return UNKNOWN_ERROR;
     }
 
-#ifndef VANILLA_HAL
+
     pASDData[0] = CAMERA_META_DATA_ASD;
     pASDData[1] = (int)data_len;
     pASDData[2] = scene;
