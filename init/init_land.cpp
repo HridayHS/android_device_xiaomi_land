@@ -34,6 +34,7 @@
 #include <sstream>
 #include <sys/sysinfo.h>
 
+#include <android-base/properties.h>
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
@@ -45,6 +46,8 @@ char const *heapsize;
 char const *heapminfree;
 char const *heapmaxfree;
 char const *large_cache_height;
+
+using android::base::GetProperty;
 
 static std::string board_id;
 
@@ -119,7 +122,7 @@ void check_device()
 
 void init_variant_properties()
 {
-    if (property_get("ro.cm.device") != "land")
+    if (GetProperty("ro.lineage.device", "") != "land")
         return;
 
     import_kernel_cmdline(0, import_cmdline);
