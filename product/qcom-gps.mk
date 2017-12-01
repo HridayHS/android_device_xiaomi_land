@@ -1,10 +1,10 @@
 # GPS
-PRODUCT_BOOT_JARS += \
-    com.qti.location.sdk
-
 PRODUCT_PACKAGES += \
     gps.msm8937 \
     libcurl
+
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/gps/etc/flp.conf:system/etc/flp.conf \

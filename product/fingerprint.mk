@@ -1,7 +1,7 @@
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprint.msm8937 \
-    fingerprintd
+    android.hardware.biometrics.fingerprint@2.0-service
 
 PRODUCT_PACKAGES += \
     init.qcom.fingerprint.rc
