@@ -623,12 +623,6 @@ service charger /charger
     seclabel u:r:healthd:s0
     writepid /dev/cpuset/system-background/tasks
 
-service ssr_diag /system/bin/ssr_diag
-    class late_start
-    user system
-    group system
-    disabled
-
 #+first boot,jiangtao.wt,add 20150810
 on property:sys.installed.running=1
     write /sys/power/wake_lock InstalldWakeLock
