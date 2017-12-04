@@ -403,6 +403,9 @@ on boot
     chown system system /dev/goodix_fp
     chmod 0644 /dev/goodix_fp
 
+    setprop persist.sys.fp.vendor none
+    start gx_fpd
+
     # Notification LEDs
     chown root system /sys/class/leds/red/blink
     chown root system /sys/class/leds/green/blink
@@ -661,22 +664,19 @@ service gx_fpd /system/bin/gx_fpd
     user root
     group system system
     writepid /dev/cpuset/system-background/tasks
+    disabled
 
-# Fingerprint Fpc
 on property:persist.sys.fp.vendor=switchf
+    stop gx_fpd
     setprop persist.sys.fp.vendor searchf
-
-on property:persist.sys.fp.vendor=searchf
     setprop ro.boot.fpsensor fpc
-    setprop persist.sys.fp.goodix 0
+    setprop ro.hardware.fingerprint searchf
+    start fps_hal
 
-# Fingerprint Goodix
 on property:persist.sys.fp.vendor=goodix
-    start gx_fpd
     setprop ro.boot.fpsensor gdx
-
-on property:ro.boot.fpsensor=gdx
-    setprop persist.sys.fp.goodix 1
+    setprop ro.hardware.fingerprint goodix
+    start fps_hal
 
 # Start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
