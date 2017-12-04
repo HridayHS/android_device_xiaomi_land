@@ -634,12 +634,16 @@ int32_t QCameraStateMachine::procEvtPreviewStoppedState(qcamera_sm_evt_enum_t ev
             m_parent->signalAPIResult(&result);
         }
         break;
+    case QCAMERA_SM_EVT_RELEASE_RECORIDNG_FRAME:
+        {
+            LOGW("Free video handle %d %d", evt, m_state);
+            QCameraVideoMemory::closeNativeHandle((const void *)payload);
+        }
     case QCAMERA_SM_EVT_PRE_START_RECORDING:
     case QCAMERA_SM_EVT_RESTART_STOP_PREVIEW:
     case QCAMERA_SM_EVT_RESTART_START_PREVIEW:
     case QCAMERA_SM_EVT_START_RECORDING:
     case QCAMERA_SM_EVT_STOP_RECORDING:
-    case QCAMERA_SM_EVT_RELEASE_RECORIDNG_FRAME:
     case QCAMERA_SM_EVT_PREPARE_SNAPSHOT:
     case QCAMERA_SM_EVT_PRE_TAKE_PICTURE:
     case QCAMERA_SM_EVT_TAKE_PICTURE:
@@ -723,7 +727,7 @@ int32_t QCameraStateMachine::procEvtPreviewStoppedState(qcamera_sm_evt_enum_t ev
     case QCAMERA_SM_EVT_SNAPSHOT_DONE:
         {
             // No ops, but need to notify
-            LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+            LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
             result.status = rc;
             result.request_api = evt;
             result.result_type = QCAMERA_API_RESULT_TYPE_DEF;
@@ -744,14 +748,14 @@ int32_t QCameraStateMachine::procEvtPreviewStoppedState(qcamera_sm_evt_enum_t ev
                }
                break;
            default:
-               LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+               LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
                break;
            }
        }
        break;
     case QCAMERA_SM_EVT_JPEG_EVT_NOTIFY:
     default:
-        LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+        LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
         break;
     }
 
@@ -1050,6 +1054,11 @@ int32_t QCameraStateMachine::procEvtPreviewReadyState(qcamera_sm_evt_enum_t evt,
             m_parent->signalAPIResult(&result);
         }
         break;
+    case QCAMERA_SM_EVT_RELEASE_RECORIDNG_FRAME:
+        {
+            LOGW("Free video handle %d %d", evt, m_state);
+            QCameraVideoMemory::closeNativeHandle((const void *)payload);
+        }
     case QCAMERA_SM_EVT_PRE_START_RECORDING:
     case QCAMERA_SM_EVT_RESTART_STOP_PREVIEW:
     case QCAMERA_SM_EVT_RESTART_START_PREVIEW:
@@ -1059,7 +1068,6 @@ int32_t QCameraStateMachine::procEvtPreviewReadyState(qcamera_sm_evt_enum_t evt,
     case QCAMERA_SM_EVT_PRE_TAKE_PICTURE:
     case QCAMERA_SM_EVT_TAKE_PICTURE:
     case QCAMERA_SM_EVT_CANCEL_PICTURE:
-    case QCAMERA_SM_EVT_RELEASE_RECORIDNG_FRAME:
     case QCAMERA_SM_EVT_RELEASE:
         {
             LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
@@ -1091,7 +1099,7 @@ int32_t QCameraStateMachine::procEvtPreviewReadyState(qcamera_sm_evt_enum_t evt,
     case QCAMERA_SM_EVT_SNAPSHOT_DONE:
         {
             // No ops, but need to notify
-            LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+            LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
             result.status = rc;
             result.request_api = evt;
             result.result_type = QCAMERA_API_RESULT_TYPE_DEF;
@@ -1107,7 +1115,7 @@ int32_t QCameraStateMachine::procEvtPreviewReadyState(qcamera_sm_evt_enum_t evt,
                rc = m_parent->mParameters.updateFlashMode(internal_evt->led_data);
                break;
            default:
-               LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+               LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
                break;
            }
        }
@@ -1115,7 +1123,7 @@ int32_t QCameraStateMachine::procEvtPreviewReadyState(qcamera_sm_evt_enum_t evt,
     case QCAMERA_SM_EVT_JPEG_EVT_NOTIFY:
     case QCAMERA_SM_EVT_THERMAL_NOTIFY:
     default:
-        LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+        LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
         break;
     }
 
@@ -1580,9 +1588,13 @@ int32_t QCameraStateMachine::procEvtPreviewingState(qcamera_sm_evt_enum_t evt,
             m_parent->signalAPIResult(&result);
         }
         break;
+    case QCAMERA_SM_EVT_RELEASE_RECORIDNG_FRAME:
+        {
+            LOGW("Free video handle %d %d", evt, m_state);
+            QCameraVideoMemory::closeNativeHandle((const void *)payload);
+        }
     case QCAMERA_SM_EVT_CANCEL_PICTURE:
     case QCAMERA_SM_EVT_STOP_RECORDING:
-    case QCAMERA_SM_EVT_RELEASE_RECORIDNG_FRAME:
     case QCAMERA_SM_EVT_RELEASE:
         {
             LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
@@ -1669,7 +1681,7 @@ int32_t QCameraStateMachine::procEvtPreviewingState(qcamera_sm_evt_enum_t evt,
     case QCAMERA_SM_EVT_SNAPSHOT_DONE:
         {
             // No ops, but need to notify
-            LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+            LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
             result.status = rc;
             result.request_api = evt;
             result.result_type = QCAMERA_API_RESULT_TYPE_DEF;
@@ -1699,7 +1711,7 @@ int32_t QCameraStateMachine::procEvtPreviewingState(qcamera_sm_evt_enum_t evt,
        break;
     case QCAMERA_SM_EVT_JPEG_EVT_NOTIFY:
     default:
-        LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+        LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
         break;
     }
 
@@ -1801,7 +1813,7 @@ int32_t QCameraStateMachine::procEvtPrepareSnapshotState(qcamera_sm_evt_enum_t e
                 rc = m_parent->processASDUpdate(internal_evt->asd_data);
                 break;
             case QCAMERA_INTERNAL_EVT_LED_MODE_OVERRIDE:
-                LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+                LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
                 break;
             case QCAMERA_INTERNAL_EVT_AWB_UPDATE:
                 rc = m_parent->transAwbMetaToParams(internal_evt->awb_data);
@@ -1849,7 +1861,7 @@ int32_t QCameraStateMachine::procEvtPrepareSnapshotState(qcamera_sm_evt_enum_t e
     case QCAMERA_SM_EVT_SNAPSHOT_DONE:
         {
             // No ops, but need to notify
-            LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+            LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
             result.status = rc;
             result.request_api = evt;
             result.result_type = QCAMERA_API_RESULT_TYPE_DEF;
@@ -1863,7 +1875,7 @@ int32_t QCameraStateMachine::procEvtPrepareSnapshotState(qcamera_sm_evt_enum_t e
         break;
     case QCAMERA_SM_EVT_JPEG_EVT_NOTIFY:
     default:
-        LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+        LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
         break;
     }
 
@@ -2186,7 +2198,7 @@ int32_t QCameraStateMachine::procEvtPicTakingState(qcamera_sm_evt_enum_t evt,
                 rc = m_parent->processASDUpdate(internal_evt->asd_data);
                 break;
             case QCAMERA_INTERNAL_EVT_LED_MODE_OVERRIDE:
-                LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+                LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
                 break;
             case QCAMERA_INTERNAL_EVT_AWB_UPDATE:
                 rc = m_parent->transAwbMetaToParams(internal_evt->awb_data);
@@ -2314,7 +2326,7 @@ int32_t QCameraStateMachine::procEvtPicTakingState(qcamera_sm_evt_enum_t evt,
         }
         break;
     default:
-        LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+        LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
         break;
     }
 
@@ -2659,7 +2671,7 @@ int32_t QCameraStateMachine::procEvtRecordingState(qcamera_sm_evt_enum_t evt,
                 rc = m_parent->processASDUpdate(internal_evt->asd_data);
                 break;
             case QCAMERA_INTERNAL_EVT_LED_MODE_OVERRIDE:
-                LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+                LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
                 break;
             case QCAMERA_INTERNAL_EVT_AWB_UPDATE:
                 rc = m_parent->transAwbMetaToParams(internal_evt->awb_data);
@@ -2710,7 +2722,7 @@ int32_t QCameraStateMachine::procEvtRecordingState(qcamera_sm_evt_enum_t evt,
     case QCAMERA_SM_EVT_SNAPSHOT_DONE:
         {
             // No ops, but need to notify
-            LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+            LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
             result.status = rc;
             result.request_api = evt;
             result.result_type = QCAMERA_API_RESULT_TYPE_DEF;
@@ -2719,7 +2731,7 @@ int32_t QCameraStateMachine::procEvtRecordingState(qcamera_sm_evt_enum_t evt,
        break;
     case QCAMERA_SM_EVT_JPEG_EVT_NOTIFY:
     default:
-        LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+        LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
         break;
     }
 
@@ -3039,7 +3051,7 @@ int32_t QCameraStateMachine::procEvtVideoPicTakingState(qcamera_sm_evt_enum_t ev
                 rc = m_parent->processASDUpdate(internal_evt->asd_data);
                 break;
             case QCAMERA_INTERNAL_EVT_LED_MODE_OVERRIDE:
-                LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+                LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
                 break;
             case QCAMERA_INTERNAL_EVT_AWB_UPDATE:
                 rc = m_parent->transAwbMetaToParams(internal_evt->awb_data);
@@ -3105,7 +3117,7 @@ int32_t QCameraStateMachine::procEvtVideoPicTakingState(qcamera_sm_evt_enum_t ev
         }
         break;
     default:
-        LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+        LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
         break;
     }
 
@@ -3548,7 +3560,7 @@ int32_t QCameraStateMachine::procEvtPreviewPicTakingState(qcamera_sm_evt_enum_t 
                 rc = m_parent->processASDUpdate(internal_evt->asd_data);
                 break;
             case QCAMERA_INTERNAL_EVT_LED_MODE_OVERRIDE:
-                LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+                LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
                 break;
             case QCAMERA_INTERNAL_EVT_AWB_UPDATE:
                 rc = m_parent->transAwbMetaToParams(internal_evt->awb_data);
@@ -3661,7 +3673,7 @@ int32_t QCameraStateMachine::procEvtPreviewPicTakingState(qcamera_sm_evt_enum_t 
         }
        break;
     default:
-        LOGE("Error!! cannot handle evt(%d) in state(%d)", evt, m_state);
+        LOGW("Cannot handle evt(%d) in state(%d)", evt, m_state);
         break;
     }
 

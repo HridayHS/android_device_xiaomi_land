@@ -52,7 +52,7 @@ class QCameraAdjustFPS
 public:
     virtual int recalcFPSRange(int &minFPS, int &maxFPS,
             const float &minVideoFPS, const float &maxVideoFPs,
-            cam_fps_range_t &adjustedRange) = 0;
+            cam_fps_range_t &adjustedRange, bool bRecordingHint) = 0;
     virtual ~QCameraAdjustFPS() {}
 };
 
@@ -152,6 +152,7 @@ public:
     int32_t updateRAW(cam_dimension_t max_dim);
     bool isDISEnabled();
     cam_is_type_t getISType();
+    bool isAVTimerEnabled();
     uint8_t getMobicatMask();
 
     cam_focus_mode_type getFocusMode() const;
@@ -231,7 +232,7 @@ public:
     int32_t configureAEBracketing(cam_capture_frame_config_t &frame_config);
     int32_t configureHDRBracketing(cam_capture_frame_config_t &frame_config);
     int32_t configFrameCapture(bool commitSettings);
-    int32_t resetFrameCapture(bool commitSettings);
+    int32_t resetFrameCapture(bool commitSettings, bool lowLightEnabled);
     cam_still_more_t getStillMoreSettings();
     void setStillMoreSettings(cam_still_more_t stillmore_config);
     cam_still_more_t getStillMoreCapability();
@@ -273,7 +274,7 @@ public:
     int32_t getRelatedCamCalibration(
             cam_related_system_calibration_data_t* calib);
     int32_t bundleRelatedCameras(bool sync, uint32_t sessionid);
-    bool isFDInVideoEnabled();
+    uint8_t fdModeInVideo();
     bool isOEMFeatEnabled();
 
     int32_t setZslMode(bool value);
