@@ -26,7 +26,6 @@
 #
 
 import /vendor/etc/init/hw/init.qcom.usb.rc
-import /vendor/etc/init/hw/init.qcom.fingerprint.rc
 
 on early-init
     mkdir /firmware 0771 system system
