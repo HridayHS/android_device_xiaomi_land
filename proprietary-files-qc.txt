@@ -374,6 +374,7 @@ vendor/lib64/libqmiservices.so|faa73371315493e773883cc34ece67590f536f7c
 vendor/lib64/libsmemlog.so|512653d3d9563fda55acb84d76006c298eb78ba2
 
 # Radio - from msm8996
+-app/SimSettings/SimSettings.apk|09eec5f9c778050ea03f0656fa1bb31247727172
 -app/QtiTelephonyService/QtiTelephonyService.apk|1573c58b37e3b9aca949ab5dcc562c0762db5e79
 etc/permissions/qcnvitems.xml|dc0e70cace2317b5169a454cbc2bbf8887c18d55
 etc/permissions/qcrilhook.xml|9fc58a3d54d20ac1d53bab14608815121aefbce5
@@ -382,7 +383,7 @@ etc/permissions/telephonyservice.xml|b297c8a27443570377d78586b00198839ce326bb
 -framework/qcnvitems.jar|4da175a16c8a193bfa213801d9ebde6898cb93b1
 -framework/qcrilhook.jar|3b1235376a1300562234873e20a1a0331a2214bb
 -framework/qti-telephony-common.jar|bda668d6d7018c56cb399370b07e1a24c2b03db1
-framework/telephony-ext.jar|462ce8eaaaa566e2dd39683c8e0f3e0c9d27ef9e
+-framework/telephony-ext.jar|462ce8eaaaa566e2dd39683c8e0f3e0c9d27ef9e
 lib64/libparam.so||8b7b5582c032a933e14bbaa8ffedea52c8b8bec2
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|54081596046b0582926f1adea93e0017a6ec2f7c
 vendor/bin/hw/rild|6eeacf9f71e41e8e41b215c33927b08fca43dc25
