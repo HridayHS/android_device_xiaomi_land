@@ -41,6 +41,10 @@ on early-init
 on init
     export LD_SHIM_LIBS "/system/bin/mm-qcamera-daemon|libshims_camera.so:/system/vendor/lib64/lib-imscamera.so|libshim_ims_camera.so"
 
+    # QSEE rpmb listener need symlink for bootdevice
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
     # Set permissions for persist partition
     mkdir /persist 0771 root system
 
@@ -51,8 +55,6 @@ on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
 on fs
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     mount_all /vendor/etc/fstab.qcom
     swapon_all /vendor/etc/fstab.qcom
 
