@@ -497,6 +497,7 @@ vendor/lib64/libsensor_user_cal.so|fe6fb4ae9388bf7b3cc6e98dd2b1c6426be1bb07
 vendor/lib64/sensors.ssc.so|f1cb1ce05b6a20f2346f75b4c671eb92e731624e
 
 # Thermal - from msm8996
+vendor/etc/thermal-engine.conf|c6c9312b7c7b52926cf7d0fc9bff933d90967100
 vendor/bin/thermal-engine|8598eb10cc3316f8fa00c9ba792b2102a5d646ed
 vendor/lib/libthermalclient.so|e14cd4d090e52394cb5a39912e71b50091873bcb
 -vendor/lib64/libthermalclient.so|9beae9671d80ee9b1d47689ed32b5780a863cb77
