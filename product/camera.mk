@@ -12,5 +12,4 @@ PRODUCT_PACKAGES += \
 # Libshims
 PRODUCT_PACKAGES += \
     libshims_camera \
-    libshim_ims_camera \
-    Snap
+    libshim_ims_camera
