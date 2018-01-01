@@ -47,8 +47,6 @@ char const *heapminfree;
 char const *heapmaxfree;
 char const *large_cache_height;
 
-using android::base::GetProperty;
-
 static std::string board_id;
 
 static void import_cmdline(const std::string& key,
@@ -122,8 +120,6 @@ void check_device()
 
 void init_variant_properties()
 {
-    if (GetProperty("ro.lineage.device", "") != "land")
-        return;
 
     import_kernel_cmdline(0, import_cmdline);
 
