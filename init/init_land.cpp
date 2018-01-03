@@ -48,16 +48,16 @@ char const *large_cache_height;
 
 static std::string board_id;
 
-static void import_cmdline(const std::string& key,
-        const std::string& value, bool for_emulator __attribute__((unused)))
-{
-    if (key.empty()) return;
+static void import_cmdline(bool in_qemu,
+                           const std::function<void(const std::string&, const std::string&, bool)>& fn) {
+    std::string cmdline;
+    android::base::ReadFileToString("/proc/cmdline", &cmdline);
 
-    if (key == "board_id") {
-        std::istringstream iss(value);
-        std::string token;
-        std::getline(iss, token, ':');
-        board_id = token;
+    for (const auto& entry : android::base::Split(android::base::Trim(cmdline), " ")) {
+        std::vector<std::string> pieces = android::base::Split(entry, "=");
+        if (pieces.size() >= 2) { // lineage's : == 2
+            fn(pieces[0], pieces[1], in_qemu);
+        }
     }
 }
 
@@ -122,7 +122,7 @@ void init_variant_properties()
     if (property_get("ro.cm.device") != "land")
         return;
 
-    import_kernel_cmdline(0, import_cmdline);
+    import_kernel_cmdline(false, import_cmdline);
 
     property_set("ro.product.wt.boardid", board_id.c_str());
 
