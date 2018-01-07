@@ -22,6 +22,3 @@ TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 
 # Inherit the proprietary files
 -include vendor/xiaomi/land/BoardConfigVendor.mk
-
-# Allow missing dependencies
-ALLOW_MISSING_DEPENDENCIES=true
