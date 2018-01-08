@@ -483,8 +483,9 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
+# ims.apk from op3 - OxygenOS 5.0
 # Radio - IMS
--app/ims/ims.apk
+-app/ims/ims.apk|82664151cd00c90a0d414b01be8acd390a7ccf54
 -app/imssettings/imssettings.apk
 etc/permissions/qti-vzw-ims-internal.xml
 lib/com.qualcomm.qti.imscmservice@1.0.so
