@@ -11,8 +11,7 @@ PRODUCT_PACKAGES += \
 
 # Libshim
 #PRODUCT_PACKAGES += \
-    libshims_camera \
-    libshim_ims_camera
+    libshims_camera
 
 # HIDL Packages
 PRODUCT_PACKAGES += \
