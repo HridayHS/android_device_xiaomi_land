@@ -6,6 +6,7 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     liboverlay \
     libgenlock \
+    libdisplayconfig \
     libjni_livedisplay \
     libtinyxml \
     memtrack.$(TARGET_BOARD_PLATFORM)
