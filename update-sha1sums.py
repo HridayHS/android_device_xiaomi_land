@@ -21,7 +21,7 @@ from hashlib import sha1
 device='land'
 vendor='xiaomi'
 
-lines = [ line for line in open('proprietary-files.txt', 'r') ]
+lines = [ line for line in open('proprietary-files-qc.txt', 'r') ]
 vendorPath = '../../../vendor/' + vendor + '/' + device + '/proprietary'
 needSHA1 = False
 
@@ -51,7 +51,7 @@ for index, line in enumerate(lines):
         hash = sha1(file).hexdigest()
         lines[index] = '%s|%s\n' % (line, hash)
 
-with open('proprietary-files.txt', 'w') as file:
+with open('proprietary-files-qc.txt', 'w') as file:
     for line in lines:
         file.write(line)
 
