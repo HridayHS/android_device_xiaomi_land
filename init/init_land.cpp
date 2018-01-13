@@ -41,7 +41,6 @@
 #include "util.h"
 
 char const *heapstartsize;
-char const *heapgrowthlimit;
 char const *heapsize;
 char const *heapminfree;
 char const *heapmaxfree;
@@ -99,19 +98,17 @@ void check_device()
     sysinfo(&sys);
 
     if (sys.totalram > 2048ull * 1024 * 1024) {
-        // from - phone-xxhdpi-3072-dalvik-heap.mk
-        heapstartsize = "8m";
-        heapgrowthlimit = "288m";
-        heapsize = "768m";
-        heapminfree = "512k";
-        heapmaxfree = "8m";
-        large_cache_height = "1024";
-    } else {
-        // from - phone-xxhdpi-2048-dalvik-heap.mk
+        // from - 3GB Redmi 3S/3X
         heapstartsize = "16m";
-        heapgrowthlimit = "192m";
+        heapsize = "384m";
+        heapminfree = "4m";
+        heapmaxfree = "8m";
+        large_cache_height = "2048";
+    } else {
+        // from - phone-xhdpi-2048-dalvik-heap.mk
+        heapstartsize = "8m";
         heapsize = "512m";
-        heapminfree = "2m";
+        heapminfree = "512k";
         heapmaxfree = "8m";
         large_cache_height = "1024";
    }
@@ -152,7 +149,7 @@ void vendor_load_properties()
     init_variant_properties();
 
     property_set("dalvik.vm.heapstartsize", heapstartsize);
-    property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
+    property_set("dalvik.vm.heapgrowthlimit", "192m");
     property_set("dalvik.vm.heapsize", heapsize);
     property_set("dalvik.vm.heaptargetutilization", "0.75");
     property_set("dalvik.vm.heapminfree", heapminfree);
