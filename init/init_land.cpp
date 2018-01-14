@@ -32,19 +32,12 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <sys/sysinfo.h>
 
 #include <android-base/properties.h>
 #include <android-base/logging.h>
 #include "vendor_init.h"
 #include "property_service.h"
 #include "util.h"
-
-char const *heapstartsize;
-char const *heapsize;
-char const *heapminfree;
-char const *heapmaxfree;
-char const *large_cache_height;
 
 using android::init::property_set;
 using android::init::import_kernel_cmdline;
@@ -91,29 +84,6 @@ static void init_alarm_boot_properties()
     property_set("ro.alarm_boot", boot_reason == 3 ? "true" : "false");
 }
 
-void check_device()
-{
-    struct sysinfo sys;
-
-    sysinfo(&sys);
-
-    if (sys.totalram > 2048ull * 1024 * 1024) {
-        // from - 3GB Redmi 3S/3X
-        heapstartsize = "16m";
-        heapsize = "384m";
-        heapminfree = "4m";
-        heapmaxfree = "8m";
-        large_cache_height = "2048";
-    } else {
-        // from - phone-xhdpi-2048-dalvik-heap.mk
-        heapstartsize = "8m";
-        heapsize = "512m";
-        heapminfree = "512k";
-        heapmaxfree = "8m";
-        large_cache_height = "1024";
-   }
-}
-
 void init_variant_properties()
 {
 
@@ -145,25 +115,5 @@ void init_variant_properties()
 void vendor_load_properties()
 {
     init_alarm_boot_properties();
-    check_device();
     init_variant_properties();
-
-    property_set("dalvik.vm.heapstartsize", heapstartsize);
-    property_set("dalvik.vm.heapgrowthlimit", "192m");
-    property_set("dalvik.vm.heapsize", heapsize);
-    property_set("dalvik.vm.heaptargetutilization", "0.75");
-    property_set("dalvik.vm.heapminfree", heapminfree);
-    property_set("dalvik.vm.heapmaxfree", heapmaxfree);
-
-    property_set("ro.hwui.texture_cache_size", "72");
-    property_set("ro.hwui.layer_cache_size", "48");
-    property_set("ro.hwui.r_buffer_cache_size", "8");
-    property_set("ro.hwui.path_cache_size", "32");
-    property_set("ro.hwui.gradient_cache_size", "1");
-    property_set("ro.hwui.drop_shadow_cache_size", "6");
-    property_set("ro.hwui.texture_cache_flushrate", "0.4");
-    property_set("ro.hwui.text_small_cache_width", "1024");
-    property_set("ro.hwui.text_small_cache_height", "1024");
-    property_set("ro.hwui.text_large_cache_width", "2048");
-    property_set("ro.hwui.text_large_cache_height", large_cache_height);
 }
