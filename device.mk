@@ -19,6 +19,9 @@
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay
 
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
+
 # Include device-specific product fragments
 include $(DEVICE_PATH)/product/*.mk
 
