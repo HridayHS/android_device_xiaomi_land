@@ -35,6 +35,8 @@ on early-init
     chmod 0620 /dev/kmsg
 
 on init
+    export LD_SHIM_LIBS "/system/bin/mm-qcamera-daemon|libshims_camera.so"
+
     # Set permissions for persist partition
     mkdir /persist 0771 root system
 
@@ -114,6 +116,9 @@ on boot
     #Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
 
+    # Prevents permission denied error for telephony
+    chmod 0644 /proc/cmdline
+
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
 
@@ -141,6 +146,21 @@ on boot
 
     # bond0 used by FST Manager
     chown wifi wifi /sys/class/net/bond0/bonding/queue_id
+
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
+
+    # Goodix Fingerprint
+    chown system system /dev/goodix_fp
+    chmod 0644 /dev/goodix_fp
+
+    setprop persist.sys.fp.vendor none
+    start gx_fpd
+
+    # Notification LEDs
+    chown root system /sys/class/leds/red/blink
+    chown root system /sys/class/leds/green/blink
+    chown root system /sys/class/leds/blue/blink
 
     # Allow access to emmc rawdump block partition and dload sysfs node
     chown root system /dev/block/bootdevice/by-name/rawdump -p /dev/block/
@@ -182,6 +202,16 @@ on boot
 
     # Create vpp directory
     mkdir /persist/vpp 0770 media media
+
+    # IR blaster
+    chown root system /sys/class/leds/infrared/transmit
+    chown root system /sys/class/leds/infrared/brightness
+
+    # Subsystem restart
+    write /sys/bus/msm_subsys/devices/subsys0/restart_level related
+    write /sys/bus/msm_subsys/devices/subsys1/restart_level related
+    write /sys/bus/msm_subsys/devices/subsys2/restart_level related
+    write /sys/bus/msm_subsys/devices/subsys3/restart_level related
 
 # msm specific files that need to be created on /data
 on post-fs-data
@@ -586,3 +616,22 @@ service time_daemon /system/vendor/bin/time_daemon
     class main
     user root
     group root
+
+service gx_fpd /system/bin/gx_fpd
+    class core
+    user root
+    group system system
+    writepid /dev/cpuset/system-background/tasks
+    disabled
+
+on property:persist.sys.fp.vendor=switchf
+    stop gx_fpd
+    setprop persist.sys.fp.vendor searchf
+    setprop ro.boot.fpsensor fpc
+    setprop ro.hardware.fingerprint searchf
+    start fps_hal
+
+on property:persist.sys.fp.vendor=goodix
+    setprop ro.boot.fpsensor gdx
+    setprop ro.hardware.fingerprint goodix
+    start fps_hal
