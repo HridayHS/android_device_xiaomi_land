@@ -27,8 +27,6 @@
 #
 #
 
-import init.carrier.rc
-
 on early-init
     mkdir /firmware 0771 system system
     mkdir /system 0777 root root
@@ -93,46 +91,15 @@ on property:persist.usb.chgdisabled=1
 on property:persist.usb.chgdisabled=0
     write /sys/class/power_supply/battery/charging_enabled 1
 
-service qrngd /system/bin/qrngd -f
-   class main
-   user root
-   group root
-
-service qrngp /system/bin/qrngp -f
-   class main
-   user root
-   group root
-   oneshot
-   disabled
-
-on property:sys.boot_completed=1
-   start qrngp
-
 service qseecomd /vendor/bin/qseecomd
    class core
    user root
    group root
 
-#service aostlmd /system/bin/aostlmd
-#   class late_start
-#   user system
-#   group system net_raw
-
-#service mpdecision /system/bin/mpdecision --avg_comp
-#   user root
-#   disabled
-
 service perfd /system/vendor/bin/perfd
    class main
    user root
    disabled
-
-service gamed /system/vendor/bin/gamed
-   class main
-   user system
-   group system
-   disabled
-   socket gamed seqpacket 0640 system system
 
 service thermal-engine /system/vendor/bin/thermal-engine
    class main
@@ -155,16 +122,6 @@ service audiod /system/vendor/bin/audiod
 
 on boot
     start rmt_storage
-    insmod /system/lib/modules/adsprpc.ko
-# access permission for secure touch
-    chmod 0660 /sys/devices/soc.0/78b7000.i2c/i2c-3/3-0020/input/input0/secure_touch_enable
-    chmod 0440 /sys/devices/soc.0/78b7000.i2c/i2c-3/3-0020/input/input0/secure_touch
-    chmod 0660 /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/secure_touch_enable
-    chmod 0440 /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/secure_touch
-    chown system drmrpc /sys/devices/soc.0/78b7000.i2c/i2c-3/3-0020/input/input0/secure_touch_enable
-    chown system drmrpc /sys/devices/soc.0/78b7000.i2c/i2c-3/3-0020/input/input0/secure_touch
-    chown system drmrpc /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/secure_touch_enable
-    chown system drmrpc /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/secure_touch
 
  # Add a cpuset for the camera daemon
  # We want all cores for camera
@@ -216,10 +173,6 @@ on charger
     setprop persist.sys.usb.config mass_storage
     start hvdcp_opti
 
-service imsstarter /vendor/bin/init.qti.ims.sh
-    class main
-    oneshot
-
 on property:vold.decrypt=trigger_restart_framework
     start imsstarter
 
@@ -259,31 +212,10 @@ on property:vendor.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
     start vendor.imsrcsservice
 
-service hbtp /system/vendor/bin/hbtp_daemon
-    class main
-    user system
-    group system
-    disabled
-
-service dts_configurator /system/vendor/bin/dts_configurator
-    class late_start
-    user system
-    group media audio
-    oneshot
-
-service dtseagleservice /system/vendor/bin/dts_eagle_service
-    class late_start
-    user system
-    group audio media
-    disabled
-
 service adsprpcd /system/vendor/bin/adsprpcd
     class main
     user media
     group media
-
-on property:init.svc.dts_configurator=stopped
-    start dtseagleservice
 
 service per_mgr /system/vendor/bin/pm-service
     class core
@@ -306,12 +238,3 @@ service hvdcp_opti /system/bin/hvdcp_opti
     class main
     user root
     group root
-
-service mdtpd /system/vendor/bin/mdtpd
-    class late_start
-    user root
-    group system radio drmrpc
-
-on boot
-    write /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/fw_name PR1702898-s3528t_00260005_00380008.img
-    write /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/update_fw 1
