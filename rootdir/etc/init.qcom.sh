@@ -468,3 +468,6 @@ case "$buildvariant" in
         echo "4 4 1 4" > /proc/sys/kernel/printk
         ;;
 esac
+
+# Set shared touchpanel nodes ownership (these are proc_symlinks to the real sysfs nodes)
+chown -LR system.system /proc/touchpanel
