@@ -154,6 +154,7 @@
 
 #permissions for audio
 /dev/wcd_dsp0_control     0660   system     audio
+/dev/wcd-dsp-glink        0660   system     audio
 /dev/audio_slimslave      0660   system     audio
 /dev/msm_qcelp            0660   system     audio
 /dev/msm_evrc             0660   system     audio
@@ -201,9 +202,6 @@
 /dev/tsc_mux0             0660   media       media
 /dev/tsc_ci0              0660   media       media
 
-# lirc
-/dev/lirc0                0660   system     system
-
 # sensors
 /sys/devices/i2c-12/12-*  pollrate_ms 0664 system system
 /sys/devices/f9925000.i2c/i2c-0/0-*                 enable         0660    input    system
@@ -230,6 +228,15 @@
 /sys/devices/soc/78b7000.i2c/i2c-3/3-0020/input/input*    secure_touch_enable  0660   system  drmrpc
 /sys/devices/soc/78b7000.i2c/i2c-3/3-0038/input/input*    secure_touch         0440   system  drmrpc
 /sys/devices/soc/78b7000.i2c/i2c-3/3-0038/input/input*    secure_touch_enable  0660   system  drmrpc
+/sys/devices/soc/78b7000.i2c/i2c-3/3-004b/input/input*    secure_touch         0440   system  drmrpc
+/sys/devices/soc/78b7000.i2c/i2c-3/3-004b/input/input*    secure_touch_enable  0660   system  drmrpc
+/sys/devices/soc/c179000.i2c/i2c-5/5-0020/input/input*    secure_touch         0440   system  drmrpc
+/sys/devices/soc/c179000.i2c/i2c-5/5-0020/input/input*    secure_touch_enable  0660   system  drmrpc
+
+# laser sensor access
+/sys/devices/virtual/input/input*                   enable_ps_sensor 0660  system   input
+/sys/devices/virtual/input/input*                   set_delay_ms     0660  system   input
+/sys/devices/virtual/input/input*                   do_flush         0660  system   input
 
 # vm_bms
 /dev/vm_bms               0660   system     system
@@ -266,10 +273,13 @@
 /dev/block/platform/soc/7824900.sdhci/by-name/config    0600   system     system
 
 # fpc Fingerprint
-/sys/devices/soc/soc:fpc1020		hw_reset			0220   system     system
-/sys/devices/soc/soc:fpc1020		irq	        		0660   system     system
-/sys/devices/soc/soc:fpc1020      	wakeup_enable	        	0220   system     system
-/sys/devices/soc/soc:fpc1020      	compatible_all	        	0220   system     system
+/sys/devices/soc/soc:fpc1020		hw_reset        0220   system     system
+/sys/devices/soc/soc:fpc1020		irq             0660   system     system
+/sys/devices/soc/soc:fpc1020    wakeup_enable   0220   system     system
+/sys/devices/soc/soc:fpc1020    compatible_all  0220   system     system
 
 # Kmsg device
-/dev/kmsg                                               0620   root       system 
+/dev/kmsg                                               0620   root       system
+
+# lirc
+/dev/lirc0                0660   system     system

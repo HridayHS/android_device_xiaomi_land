@@ -2,11 +2,6 @@
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
-# Init scripts
-PRODUCT_PACKAGES += \
-    init.qcom.usb.rc \
-    init.qcom.usb.sh
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \

@@ -1,5 +1,5 @@
-#! /vendor/bin/sh
-# Copyright (c) 2009-2015, The Linux Foundation. All rights reserved.
+#!/vendor/bin/sh
+# Copyright (c) 2015, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -26,40 +26,18 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-# Set shared touchpanel nodes ownership (these are proc_symlinks to the real sysfs nodes)
-chown -LR system.system /proc/touchpanel
-
 #
-# Make modem config folder and copy firmware config to that folder for RIL
+# Function to start sensors for SSC enabled platforms
 #
-if [ -f /data/vendor/radio/ver_info.txt ]; then
-    prev_version_info=`cat /data/vendor/radio/ver_info.txt`
-else
-    prev_version_info=""
-fi
+start_sensors()
+{
+    if [ -c /dev/msm_dsps -o -c /dev/sensors ]; then
+        chmod -h 775 /persist/sensors
+        chmod -h 664 /persist/sensors/sensors_settings
+        mkdir -p /persist/sensors/registry/registry
+        chown -h system.root /persist/sensors/sensors_settings
+        start sensors
+    fi
+}
 
-cur_version_info=`cat /firmware/verinfo/ver_info.txt
-if [ ! -f /firmware/verinfo/ver_info.txt -o "$prev_version_info" != "$cur_version_info" ]; then
-    rm -rf /data/vendor/radio/modem_config
-    mkdir /data/vendor/radio/modem_config
-    chmod 770 /data/vendor/radio/modem_config
-    cp -r /firmware/image/modem_pr/mcfg/configs/* /data/vendor/radio/modem_config
-    chown -hR radio.radio /data/vendor/radio/modem_config
-    cp /firmware/verinfo/ver_info.txt /data/vendor/radio/ver_info.txt
-    chown radio.radio /data/vendor/radio/ver_info.txt
-fi
-echo 1 > /data/vendor/radio/copy_complete
-
-#check build variant for printk logging
-#current default minimum boot-time-default
-buildvariant=`getprop ro.build.type`
-case "$buildvariant" in
-    "userdebug" | "eng")
-        #set default loglevel to KERN_INFO
-        echo "6 6 1 7" > /proc/sys/kernel/printk
-        ;;
-    *)
-        #set default loglevel to KERN_WARNING
-        echo "4 4 1 4" > /proc/sys/kernel/printk
-        ;;
-esac
+start_sensors
