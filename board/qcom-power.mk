@@ -1,2 +1,2 @@
 # Power
-TARGET_POWERHAL_VARIANT := qcom
+TARGET_HAS_NO_WIFI_STATS := true
