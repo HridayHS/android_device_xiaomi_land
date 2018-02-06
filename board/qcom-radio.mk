@@ -1,3 +1,3 @@
 # RIL
+PROTOBUF_SUPPORTED := true
 TARGET_RIL_VARIANT := caf
-
