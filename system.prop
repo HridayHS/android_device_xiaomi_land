@@ -94,6 +94,10 @@ persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.location
 ro.gps.agps_provider=1
 
+# MBN OTA Daemon
+persist.radio.start_ota_daemon=1
+persist.radio.sw_mbn_openmkt=1
+
 # Media
 media.msm8956hw=0
 mm.enable.smoothstreaming=true
