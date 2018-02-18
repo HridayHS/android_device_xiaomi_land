@@ -10,7 +10,7 @@ PRODUCT_PACKAGES += \
     Snap
 
 # Libshim
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     libshims_camera
 
 # HIDL Packages
