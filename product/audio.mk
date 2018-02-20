@@ -6,6 +6,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/audio/mixer_paths_qrd_sku1.xml:system/vendor/etc/mixer_paths_qrd_sku1.xml \
     $(DEVICE_PATH)/audio/audio_tuning_mixer.txt:system/vendor/etc/audio_tuning_mixer.txt \
     $(DEVICE_PATH)/audio/audio_platform_info.xml:system/vendor/etc/audio_platform_info.xml \
+    $(DEVICE_PATH)/audio/audio_platform_info_extcodec.xml:system/vendor/etc/audio_platform_info_extcodec.xml \
     $(DEVICE_PATH)/audio/sound_trigger_mixer_paths.xml:system/vendor/etc/sound_trigger_mixer_paths.xml \
     $(DEVICE_PATH)/audio/sound_trigger_platform_info.xml:system/vendor/etc/sound_trigger_platform_info.xml
 
