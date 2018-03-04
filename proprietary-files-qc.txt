@@ -1,4 +1,4 @@
-# ADSP - from tissot (Mi A1)
+# ADSP - from tissot - OPR1.170623.026 8.2.8
 vendor/bin/adsprpcd
 vendor/lib/libadsp_default_listener.so
 vendor/lib/libadsprpc.so
@@ -12,7 +12,7 @@ vendor/lib64/libadsprpc.so
 vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libqtigef.so
 
-# ADSP modules - from tissot (Mi A1)
+# ADSP modules - from tissot - OPR1.170623.026 8.2.8
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libexternal_dog_skel.so
@@ -23,7 +23,7 @@ vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
 vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 
-# Audio - from tissot (Mi A1)
+# Audio - from tissot - OPR1.170623.026 8.2.8
 etc/permissions/audiosphere.xml
 framework/audiosphere.jar
 lib/libqct_resampler.so
@@ -66,7 +66,7 @@ vendor/lib/rfsa/adsp/dirac_resource.so
 vendor/lib/rfsa/adsp/libdirac-appi.so
 vendor/lib/rfsa/adsp/libdirac-capiv2.so
 
-# Bluetooth - from tissot (Mi A1)
+# Bluetooth - from tissot - OPR1.170623.026 8.2.8
 -lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 -lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/bin/hci_qcomm_init
@@ -80,7 +80,7 @@ vendor/lib64/libbtnv.so
 vendor/lib64/libaptX_encoder.so
 vendor/lib64/libaptXHD_encoder.so
 
-# CNE - from tissot (Mi A1)
+# CNE - from tissot - OPR1.170623.026 8.2.8
 etc/cne/andsfCne.xml
 etc/cne/SwimConfig.xml
 etc/permissions/cneapiclient.xml
@@ -134,10 +134,10 @@ vendor/lib64/libcneqmiutils.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
-# Charger - from tissot (Mi A1)
+# Charger - from tissot - OPR1.170623.026 8.2.8
 vendor/bin/hvdcp_opti
 
-# DPM - from tissot (Mi A1)
+# DPM - from tissot - OPR1.170623.026 8.2.8
 bin/dpmd
 etc/dpm/dpm.conf
 etc/dpm/nsrm/NsrmConfiguration.xml
@@ -166,7 +166,7 @@ vendor/lib/libdpmqmihal.so
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0_vendor.so
 vendor/lib64/libdpmqmihal.so
 
-# DRM - from tissot (Mi A1)
+# DRM - from tissot - OPR1.170623.026 8.2.8
 vendor/bin/qseecomd
 vendor/lib/libcppf.so
 vendor/lib/libQSEEComAPI.so
@@ -185,7 +185,7 @@ vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/libtzdrmgenprov.so
 
-# DRM - Qualcomm Trusted Execution Enviornment - from tissot (Mi A1)
+# DRM - Qualcomm Trusted Execution Enviornment - from tissot - OPR1.170623.026 8.2.8
 lib/vendor.qti.hardware.qteeconnector@1.0.so
 lib64/vendor.qti.hardware.qteeconnector@1.0.so
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
@@ -195,7 +195,7 @@ vendor/lib/vendor.qti.hardware.qteeconnector@1.0_vendor.so
 vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0_vendor.so
 
-# FM - from tissot (Mi A1)
+# FM - from tissot - OPR1.170623.026 8.2.8
 -lib/vendor.qti.hardware.fm@1.0.so
 -lib64/vendor.qti.hardware.fm@1.0.so
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
@@ -203,11 +203,11 @@ vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so
 
-# Gatekeeper - from tissot (Mi A1)
+# Gatekeeper - from tissot - OPR1.170623.026 8.2.8
 vendor/lib/hw/gatekeeper.msm8953.so:vendor/lib/hw/gatekeeper.msm8937.so
 vendor/lib64/hw/gatekeeper.msm8953.so:vendor/lib64/hw/gatekeeper.msm8937.so
 
-# GPS - from tissot (Mi A1)
+# GPS - from tissot - OPR1.170623.026 8.2.8
 etc/permissions/com.qti.location.sdk.xml
 etc/permissions/com.qualcomm.location.xml
 etc/permissions/izat.xt.srv.xml
@@ -334,7 +334,7 @@ vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
 vendor/lib64/hw/vulkan.msm8996.so:vendor/lib64/hw/vulkan.msm8937.so
 vendor/lib/hw/vulkan.msm8996.so:vendor/lib/hw/vulkan.msm8937.so
 
-# IMS - from tissot (Mi A1)
+# IMS - from tissot - OPR1.170623.026 8.2.8
 # ims.apk - from oneplus3
 -app/ims/ims.apk|d255b5dfe08b0287b338edde796b9a533b28fd81
 -app/imssettings/imssettings.apk
@@ -385,11 +385,11 @@ vendor/lib64/lib-uceservice.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
 
-# Keystore - from tissot (Mi A1)
+# Keystore - from tissot - OPR1.170623.026 8.2.8
 vendor/lib/hw/keystore.msm8953.so:vendor/lib/hw/keystore.msm8937.so
 vendor/lib64/hw/keystore.msm8953.so:vendor/lib64/hw/keystore.msm8937.so
 
-# Listen - from tissot (Mi A1)
+# Listen - from tissot - OPR1.170623.026 8.2.8
 vendor/lib/hw/sound_trigger.primary.msm8953.so:vendor/lib/hw/sound_trigger.primary.msm8937.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
@@ -397,7 +397,7 @@ vendor/lib/vendor.qti.voiceprint@1.0.so
 vendor/lib64/hw/sound_trigger.primary.msm8953.so:vendor/lib64/hw/sound_trigger.primary.msm8937.so
 vendor/lib64/vendor.qti.voiceprint@1.0.so
 
-# Media - from tissot (Mi A1)
+# Media - from tissot - OPR1.170623.026 8.2.8
 vendor/lib/libI420colorconvert.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAlacDec.so
@@ -431,11 +431,11 @@ vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libvpplibrary.so
 
-# Modem - from tissot (Mi A1)
+# Modem - from tissot - OPR1.170623.026 8.2.8
 vendor/lib/libwms.so
 vendor/lib64/libwms.so
 
-# Perf - from tissot (Mi A1)
+# Perf - from tissot - OPR1.170623.026 8.2.8
 lib/vendor.qti.hardware.iop@1.0.so
 lib/vendor.qti.hardware.perf@1.0.so
 lib64/vendor.qti.hardware.iop@1.0.so
@@ -462,7 +462,7 @@ vendor/lib64/libqti-perfd-client.so
 vendor/lib64/vendor.qti.hardware.iop@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
 
-# Peripheral manager - from tissot (Mi A1)
+# Peripheral manager - from tissot - OPR1.170623.026 8.2.8
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
@@ -486,7 +486,7 @@ vendor/lib64/libdisp-aba.so
 vendor/lib64/vendor.display.color@1.0_vendor.so
 vendor/lib64/vendor.display.postproc@1.0_vendor.so
 
-# QMI - from tissot (Mi A1)
+# QMI - from tissot - OPR1.170623.026 8.2.8
 etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
 etc/permissions/qti_permissions.xml
 lib/libdiag_system.so
@@ -527,7 +527,7 @@ vendor/lib64/libqmi.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libsmemlog.so
 
-# Radio - from tissot (Mi A1)
+# Radio - from tissot - OPR1.170623.026 8.2.8
 -app/QtiTelephonyService/QtiTelephonyService.apk
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
@@ -574,7 +574,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
-# Sensors - from tissot (Mi A1)
+# Sensors - from tissot - OPR1.170623.026 8.2.8
 vendor/bin/sensors.qcom
 vendor/lib/hw/activity_recognition.msm8953.so:vendor/lib/hw/activity_recognition.msm8937.so
 vendor/lib/libsensor1.so
@@ -587,25 +587,25 @@ vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
 
-# Thermal - from tissot (Mi A1)
+# Thermal - from tissot - OPR1.170623.026 8.2.8
 vendor/etc/thermal-engine.conf
 vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 
-# Time services - from tissot (Mi A1)
+# Time services - from tissot - OPR1.170623.026 8.2.8
 -vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 -vendor/lib/libtime_genoff.so
 -vendor/lib64/libtime_genoff.so
 
-# Widevine DRM - from tissot (Mi A1)
+# Widevine DRM - from tissot - OPR1.170623.026 8.2.8
 vendor/bin/hw/android.hardware.drm@1.0-service.widevine
 vendor/etc/init/android.hardware.drm@1.0-service.widevine.rc
 vendor/lib/libwvhidl.so
 
-# Wi-Fi - from tissot (Mi A1)
+# Wi-Fi - from tissot - OPR1.170623.026 8.2.8
 vendor/bin/cnss-daemon
 vendor/bin/cnss_diag
 vendor/lib64/vendor.qti.hardware.wifi.supplicant@1.0_vendor.so
