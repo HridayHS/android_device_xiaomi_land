@@ -329,6 +329,11 @@ else
         fi
     fi
 
+    #Enable oom_reaper
+    if [ -f /sys/module/lowmemorykiller/parameters/oom_reaper ]; then
+        echo 1 > /sys/module/lowmemorykiller/parameters/oom_reaper
+    fi
+
     configure_zram_parameters
 
     SWAP_ENABLE_THRESHOLD=1048576
@@ -1563,6 +1568,8 @@ case "$target" in
             platform_subtype_id=`cat /sys/devices/soc0/platform_subtype_id`
         fi
 
+        echo 0 > /proc/sys/kernel/sched_boost
+
         case "$soc_id" in
             "293" | "304" | "338" | "351" )
 
@@ -1705,6 +1712,19 @@ case "$target" in
                     8953_sched_dcvs_hmp
                 fi
                 echo 652800 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+
+                # Bring up all cores online
+                echo 1 > /sys/devices/system/cpu/cpu1/online
+                echo 1 > /sys/devices/system/cpu/cpu2/online
+                echo 1 > /sys/devices/system/cpu/cpu3/online
+                echo 1 > /sys/devices/system/cpu/cpu4/online
+                echo 1 > /sys/devices/system/cpu/cpu5/online
+                echo 1 > /sys/devices/system/cpu/cpu6/online
+                echo 1 > /sys/devices/system/cpu/cpu7/online
+
+                # Enable low power modes
+                echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
+
                 # re-enable thermal & BCL core_control now
                 echo 1 > /sys/module/msm_thermal/core_control/enabled
                 for mode in /sys/devices/soc.0/qcom,bcl.*/mode
@@ -1723,18 +1743,6 @@ case "$target" in
                 do
                     echo -n enable > $mode
                 done
-
-                # Bring up all cores online
-                echo 1 > /sys/devices/system/cpu/cpu1/online
-                echo 1 > /sys/devices/system/cpu/cpu2/online
-                echo 1 > /sys/devices/system/cpu/cpu3/online
-                echo 1 > /sys/devices/system/cpu/cpu4/online
-                echo 1 > /sys/devices/system/cpu/cpu5/online
-                echo 1 > /sys/devices/system/cpu/cpu6/online
-                echo 1 > /sys/devices/system/cpu/cpu7/online
-
-                # Enable low power modes
-                echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
 
                 # SMP scheduler
                 echo 85 > /proc/sys/kernel/sched_upmigrate
@@ -1766,11 +1774,10 @@ case "$target" in
         fi
 
         case "$soc_id" in
-           "303" | "307" | "308" | "309" | "320" )
-
+           "303" | "307" | "308" | "309" | "320" | "294")
                   # Start Host based Touch processing
                   case "$hw_platform" in
-                    "MTP" )
+                    "MTP" | "QRD" )
 			start_hbtp
                         ;;
                   esac
@@ -2746,6 +2753,9 @@ case "$target" in
 	echo 1574400 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/hispeed_freq
 	echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
 	echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
+
+        # Enable oom_reaper for sdm845
+        echo 1 > /sys/module/lowmemorykiller/parameters/oom_reaper
 
         # Enable bus-dcvs
         for cpubw in /sys/class/devfreq/*qcom,cpubw*
